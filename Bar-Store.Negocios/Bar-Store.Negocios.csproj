@@ -43,5 +43,15 @@
     <Compile Include="Negocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bar-Store.Clases\Bar-Store.Clases.csproj">
+      <Project>{f27f8fa2-3fa6-43ea-a54a-6455787e934d}</Project>
+      <Name>Bar-Store.Clases</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bar-Store.Datos\Bar-Store.Datos.csproj">
+      <Project>{98572600-5534-4cb0-bf4e-8c1551638147}</Project>
+      <Name>Bar-Store.Datos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

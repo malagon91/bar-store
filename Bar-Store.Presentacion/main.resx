@@ -117,17 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="accept" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\accept.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA
+        AABAREQDQEREBDhAQAJHR0c1R0dHd0dHR5lHR0fXR0dH3EdHR9xHR0fZR0dHn0dHR3hHR0c4OEFBAkBE
+        RARAREQDQEREA0BERARAREQEQkVFBkRGRghGR0caR0dHu0dHR/9HR0f/R0dHx0ZHRyBERkYIQ0VFBkBE
+        RARAREQEQEREBD1DQwIOGRkAAAsLAAAKCgAAAAAASEhIAEdHR31HR0fiR0dH4kdHR4oSICAA////AAAI
+        CAAACwsADRcXAD1DQwJHR0cpR0dHc0dHR31HR0d9R0dHfUdHR31HR0eOR0dHnUdHR51HR0eQR0dHfUdH
+        R31HR0d9R0dHfUdHR3NGR0cpR0dHokdHR/9HR0f/R0dH/0dHR/9HR0f/R0dH/0dHR/9HR0f/R0dH/0dH
+        R/9HR0f/R0dH/0dHR/9HR0f/R0dHo0dHR5RHR0d+R0dHc0dHR3tHR0eIR0dHfEdHR3RHR0d0R0dHdEdH
+        R3RHR0d0R0dHdEdHR3RHR0d0R0dHfkdHR5RHR0d2R0dHEEdHRwBHR0dPR0dHfEdHR1BHR0chR0dHWUdH
+        R1lHR0dOR0dHC0dHRwAAAAAAR0dHAEdHRxBHR0d2R0dHd0ZHRxQPLy8AR0dHWUdHR4JHR0daR0dHMEdH
+        R3lHR0d5R0dHdkdHR2RGR0ckMT09ATpBQQJGR0cUR0dHd0dHR3dGR0cUNkBAAkZHRytHR0diRkdHLEZG
+        RhJGR0cqRkdHKkZHRylGR0ciRkZGC0ZHRxRGR0cWRkdHE0dHR3dHR0d3RkdHFAAmJgBHR0dfR0dHhkdH
+        R2BGR0crR0dHa0dHR2xHR0deRkdHHkdHR2JHR0emR0dHVEZGRhFHR0d3R0dHd0ZHRxQoOjoBR0dHSEdH
+        R3dHR0dJRkdHKkdHR2lHR0dqR0dHW0dHRzlHR0fpR0dHtEVGRg9GR0cTR0dHd0dHR3dGR0cUNkBAAkdH
+        Ry1HR0deRkdHK0VGRhFGR0coRkdHKUZHRyJGR0cgR0dHYEdHRz1CRUUGRkdHFEdHR3dHR0d3RkdHFAAe
+        HgBHR0dkR0dHq0dHR1FHR0cxR0dHeUdHR3lHR0duRkdHJkZGRgcyPT0APkNDA0ZHRxRHR0d3R0dHd0ZG
+        RhJkVFQAR0dHO0dHR1lHR0dKRkdHLEdHR1tHR0dbR0dHW0dHR1tGR0chABAQACs7OwFGRkYSR0dHd0dH
+        R5BHR0ebR0dHlEdHR5NHR0eTR0dHlUdHR5RHR0eUR0dHlEdHR5RHR0eUR0dHlEdHR5RHR0eUR0dHm0dH
+        R5BHR0dGR0dHsEdHR71HR0e8R0dHvEdHR7xHR0e8R0dHvEdHR7xHR0e8R0dHvEdHR7xHR0e8R0dHvUdH
+        R7BHR0dGAAAAAAAAAAB8PgAAAAAAAAAAAAAAAAAAIBwAACAAAAAAAAAAIAAAAAAAAAAAAAAAIAgAACAI
+        AAAAAAAAAAAAAA==
+</value>
   </data>
 </root>

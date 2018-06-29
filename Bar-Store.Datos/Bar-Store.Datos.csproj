@@ -54,5 +54,11 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bar-Store.Clases\Bar-Store.Clases.csproj">
+      <Project>{f27f8fa2-3fa6-43ea-a54a-6455787e934d}</Project>
+      <Name>Bar-Store.Clases</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
