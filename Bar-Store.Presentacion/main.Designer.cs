@@ -31,9 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmdSalir = new System.Windows.Forms.Button();
-            this.cmdBuscar = new System.Windows.Forms.Button();
             this.txtOpcion = new System.Windows.Forms.TextBox();
             this.panel = new System.Windows.Forms.Panel();
+            this.bUsers = new System.Windows.Forms.Button();
+            this.bInventory = new System.Windows.Forms.Button();
+            this.bProducts = new System.Windows.Forms.Button();
+            this.bSales = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,8 +44,11 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.SkyBlue;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.bUsers);
+            this.panel1.Controls.Add(this.bInventory);
+            this.panel1.Controls.Add(this.bProducts);
             this.panel1.Controls.Add(this.cmdSalir);
-            this.panel1.Controls.Add(this.cmdBuscar);
+            this.panel1.Controls.Add(this.bSales);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -59,17 +65,6 @@
             this.cmdSalir.Text = "Salir";
             this.cmdSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.cmdSalir.UseVisualStyleBackColor = true;
-            // 
-            // cmdBuscar
-            // 
-            this.cmdBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.cmdBuscar.Location = new System.Drawing.Point(19, 14);
-            this.cmdBuscar.Name = "cmdBuscar";
-            this.cmdBuscar.Size = new System.Drawing.Size(64, 70);
-            this.cmdBuscar.TabIndex = 0;
-            this.cmdBuscar.Text = "Buscar";
-            this.cmdBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.cmdBuscar.UseVisualStyleBackColor = true;
             // 
             // txtOpcion
             // 
@@ -92,6 +87,56 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(700, 430);
             this.panel.TabIndex = 5;
+            // 
+            // bUsers
+            // 
+            this.bUsers.Image = global::Bar_Store.Presentacion.Properties.Resources.report_user;
+            this.bUsers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bUsers.Location = new System.Drawing.Point(19, 233);
+            this.bUsers.Name = "bUsers";
+            this.bUsers.Size = new System.Drawing.Size(64, 57);
+            this.bUsers.TabIndex = 6;
+            this.bUsers.Text = "Usuarios";
+            this.bUsers.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bUsers.UseVisualStyleBackColor = true;
+            this.bUsers.Click += new System.EventHandler(this.bUsers_Click);
+            // 
+            // bInventory
+            // 
+            this.bInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bInventory.Image = global::Bar_Store.Presentacion.Properties.Resources.book;
+            this.bInventory.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bInventory.Location = new System.Drawing.Point(19, 160);
+            this.bInventory.Name = "bInventory";
+            this.bInventory.Size = new System.Drawing.Size(64, 56);
+            this.bInventory.TabIndex = 5;
+            this.bInventory.Text = "Inventarios";
+            this.bInventory.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bInventory.UseVisualStyleBackColor = true;
+            // 
+            // bProducts
+            // 
+            this.bProducts.Image = global::Bar_Store.Presentacion.Properties.Resources.application_from_storage;
+            this.bProducts.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bProducts.Location = new System.Drawing.Point(19, 87);
+            this.bProducts.Name = "bProducts";
+            this.bProducts.Size = new System.Drawing.Size(64, 57);
+            this.bProducts.TabIndex = 4;
+            this.bProducts.Text = "Productos";
+            this.bProducts.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bProducts.UseVisualStyleBackColor = true;
+            // 
+            // bSales
+            // 
+            this.bSales.Image = global::Bar_Store.Presentacion.Properties.Resources.basket;
+            this.bSales.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bSales.Location = new System.Drawing.Point(19, 14);
+            this.bSales.Name = "bSales";
+            this.bSales.Size = new System.Drawing.Size(64, 57);
+            this.bSales.TabIndex = 0;
+            this.bSales.Text = "Ventas";
+            this.bSales.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bSales.UseVisualStyleBackColor = true;
             // 
             // main
             // 
@@ -120,8 +165,11 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button cmdSalir;
-        private System.Windows.Forms.Button cmdBuscar;
+        private System.Windows.Forms.Button bSales;
         public System.Windows.Forms.TextBox txtOpcion;
         private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.Button bProducts;
+        private System.Windows.Forms.Button bInventory;
+        private System.Windows.Forms.Button bUsers;
     }
 }

@@ -73,6 +73,7 @@
             this.tUser.Name = "tUser";
             this.tUser.Size = new System.Drawing.Size(100, 21);
             this.tUser.TabIndex = 1;
+            this.tUser.Text = "miguel";
             // 
             // tPass
             // 
@@ -82,6 +83,7 @@
             this.tPass.PasswordChar = '*';
             this.tPass.Size = new System.Drawing.Size(100, 21);
             this.tPass.TabIndex = 3;
+            this.tPass.Text = "123";
             // 
             // label2
             // 
