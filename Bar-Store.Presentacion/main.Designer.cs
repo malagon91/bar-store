@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cmdSalir = new System.Windows.Forms.Button();
-            this.txtOpcion = new System.Windows.Forms.TextBox();
-            this.panel = new System.Windows.Forms.Panel();
             this.bUsers = new System.Windows.Forms.Button();
             this.bInventory = new System.Windows.Forms.Button();
             this.bProducts = new System.Windows.Forms.Button();
+            this.cmdSalir = new System.Windows.Forms.Button();
             this.bSales = new System.Windows.Forms.Button();
+            this.txtOpcion = new System.Windows.Forms.TextBox();
+            this.panel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,39 +54,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(100, 450);
             this.panel1.TabIndex = 1;
-            // 
-            // cmdSalir
-            // 
-            this.cmdSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.cmdSalir.Location = new System.Drawing.Point(19, 485);
-            this.cmdSalir.Name = "cmdSalir";
-            this.cmdSalir.Size = new System.Drawing.Size(64, 70);
-            this.cmdSalir.TabIndex = 3;
-            this.cmdSalir.Text = "Salir";
-            this.cmdSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.cmdSalir.UseVisualStyleBackColor = true;
-            // 
-            // txtOpcion
-            // 
-            this.txtOpcion.BackColor = System.Drawing.Color.SkyBlue;
-            this.txtOpcion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtOpcion.Location = new System.Drawing.Point(100, 0);
-            this.txtOpcion.Name = "txtOpcion";
-            this.txtOpcion.ReadOnly = true;
-            this.txtOpcion.Size = new System.Drawing.Size(700, 20);
-            this.txtOpcion.TabIndex = 4;
-            this.txtOpcion.Text = "Menu Principal de la tienda";
-            this.txtOpcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // panel
-            // 
-            this.panel.BackColor = System.Drawing.Color.White;
-            this.panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel.Location = new System.Drawing.Point(100, 20);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(700, 430);
-            this.panel.TabIndex = 5;
             // 
             // bUsers
             // 
@@ -125,6 +92,18 @@
             this.bProducts.Text = "Productos";
             this.bProducts.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.bProducts.UseVisualStyleBackColor = true;
+            this.bProducts.Click += new System.EventHandler(this.bProducts_Click);
+            // 
+            // cmdSalir
+            // 
+            this.cmdSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.cmdSalir.Location = new System.Drawing.Point(19, 485);
+            this.cmdSalir.Name = "cmdSalir";
+            this.cmdSalir.Size = new System.Drawing.Size(64, 70);
+            this.cmdSalir.TabIndex = 3;
+            this.cmdSalir.Text = "Salir";
+            this.cmdSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.cmdSalir.UseVisualStyleBackColor = true;
             // 
             // bSales
             // 
@@ -137,6 +116,28 @@
             this.bSales.Text = "Ventas";
             this.bSales.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.bSales.UseVisualStyleBackColor = true;
+            // 
+            // txtOpcion
+            // 
+            this.txtOpcion.BackColor = System.Drawing.Color.SkyBlue;
+            this.txtOpcion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtOpcion.Location = new System.Drawing.Point(100, 0);
+            this.txtOpcion.Name = "txtOpcion";
+            this.txtOpcion.ReadOnly = true;
+            this.txtOpcion.Size = new System.Drawing.Size(700, 20);
+            this.txtOpcion.TabIndex = 4;
+            this.txtOpcion.Text = "Menu Principal de la tienda";
+            this.txtOpcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // panel
+            // 
+            this.panel.BackColor = System.Drawing.Color.White;
+            this.panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel.Location = new System.Drawing.Point(100, 20);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(700, 430);
+            this.panel.TabIndex = 5;
             // 
             // main
             // 

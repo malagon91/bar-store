@@ -92,7 +92,29 @@ namespace Bar_Store.Datos
             return users;
         }
 
-      
+        public List<Product> getProducts()
+        {
+            SqlConnection oCon = new SqlConnection(ConectionString);
+            SqlCommand oCmd = new SqlCommand("select idProduct,product,cost,productDesc, inventory from Products ", oCon);
+            oCmd.CommandType = CommandType.Text;
+
+            oCon.Open();
+            SqlDataReader dr = oCmd.ExecuteReader();
+            List<Product> products = new List<Product>();
+            while (dr.Read())
+            {
+                Product prod = new Product();
+                prod.Id = Convert.ToInt32(dr["idProduct"].ToString());
+                prod.Name = dr["product"].ToString();
+                prod.Cost = Convert.ToDouble(dr["cost"].ToString());
+                prod.Desc = dr["productDesc"].ToString();
+                prod.Inventory = Convert.ToInt32(dr["inventory"].ToString());
+                products.Add(prod);
+            }
+            oCon.Close();
+            oCon.Dispose();
+            return products;
+        }
         #endregion
     }
 }

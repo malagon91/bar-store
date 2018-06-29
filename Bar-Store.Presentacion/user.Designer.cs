@@ -30,18 +30,18 @@
         {
             this.lTitle = new System.Windows.Forms.Label();
             this.GB1 = new System.Windows.Forms.GroupBox();
-            this.dgv = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tLogin = new System.Windows.Forms.TextBox();
-            this.tName = new System.Windows.Forms.TextBox();
-            this.luser = new System.Windows.Forms.Label();
+            this.bDelete = new System.Windows.Forms.Button();
+            this.bNew = new System.Windows.Forms.Button();
+            this.bSave = new System.Windows.Forms.Button();
+            this.cAdmin = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tPass = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cAdmin = new System.Windows.Forms.CheckBox();
-            this.bSave = new System.Windows.Forms.Button();
-            this.bNew = new System.Windows.Forms.Button();
-            this.bDelete = new System.Windows.Forms.Button();
+            this.tName = new System.Windows.Forms.TextBox();
+            this.luser = new System.Windows.Forms.Label();
+            this.tLogin = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.GB1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
@@ -77,55 +77,59 @@
             this.GB1.TabStop = false;
             this.GB1.Text = "Informacion de usuarios";
             // 
-            // dgv
+            // bDelete
             // 
-            this.dgv.AllowUserToAddRows = false;
-            this.dgv.AllowUserToDeleteRows = false;
-            this.dgv.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(93, 187);
-            this.dgv.Name = "dgv";
-            this.dgv.ReadOnly = true;
-            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(478, 192);
-            this.dgv.TabIndex = 2;
-            this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
+            this.bDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bDelete.Location = new System.Drawing.Point(390, 88);
+            this.bDelete.Name = "bDelete";
+            this.bDelete.Size = new System.Drawing.Size(68, 31);
+            this.bDelete.TabIndex = 11;
+            this.bDelete.Text = "Eliminar";
+            this.bDelete.UseVisualStyleBackColor = true;
+            this.bDelete.Click += new System.EventHandler(this.bDelete_Click);
             // 
-            // label1
+            // bNew
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Login:";
+            this.bNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bNew.Location = new System.Drawing.Point(390, 23);
+            this.bNew.Name = "bNew";
+            this.bNew.Size = new System.Drawing.Size(68, 31);
+            this.bNew.TabIndex = 10;
+            this.bNew.Text = "Nuevo ";
+            this.bNew.UseVisualStyleBackColor = true;
+            this.bNew.Click += new System.EventHandler(this.bNew_Click);
             // 
-            // tLogin
+            // bSave
             // 
-            this.tLogin.Location = new System.Drawing.Point(103, 28);
-            this.tLogin.MaxLength = 20;
-            this.tLogin.Name = "tLogin";
-            this.tLogin.Size = new System.Drawing.Size(281, 21);
-            this.tLogin.TabIndex = 1;
-            this.tLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tLogin_KeyPress);
+            this.bSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bSave.Location = new System.Drawing.Point(390, 56);
+            this.bSave.Name = "bSave";
+            this.bSave.Size = new System.Drawing.Size(68, 31);
+            this.bSave.TabIndex = 9;
+            this.bSave.Text = "Guardar";
+            this.bSave.UseVisualStyleBackColor = true;
+            this.bSave.Click += new System.EventHandler(this.bSave_Click);
             // 
-            // tName
+            // cAdmin
             // 
-            this.tName.Location = new System.Drawing.Point(103, 56);
-            this.tName.MaxLength = 30;
-            this.tName.Name = "tName";
-            this.tName.Size = new System.Drawing.Size(281, 21);
-            this.tName.TabIndex = 3;
-            this.tName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tName_KeyPress);
+            this.cAdmin.AutoSize = true;
+            this.cAdmin.Location = new System.Drawing.Point(103, 111);
+            this.cAdmin.Name = "cAdmin";
+            this.cAdmin.Size = new System.Drawing.Size(102, 19);
+            this.cAdmin.TabIndex = 7;
+            this.cAdmin.Text = "Administrador";
+            this.cAdmin.UseVisualStyleBackColor = true;
+            this.cAdmin.CheckedChanged += new System.EventHandler(this.cAdmin_CheckedChanged);
+            this.cAdmin.Click += new System.EventHandler(this.cAdmin_Click);
             // 
-            // luser
+            // label3
             // 
-            this.luser.AutoSize = true;
-            this.luser.Location = new System.Drawing.Point(6, 59);
-            this.luser.Name = "luser";
-            this.luser.Size = new System.Drawing.Size(55, 15);
-            this.luser.TabIndex = 2;
-            this.luser.Text = "Nombre:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 111);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 15);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Es Admin:";
             // 
             // tPass
             // 
@@ -146,59 +150,56 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Password:";
             // 
-            // label3
+            // tName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 111);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Es Admin:";
+            this.tName.Location = new System.Drawing.Point(103, 56);
+            this.tName.MaxLength = 30;
+            this.tName.Name = "tName";
+            this.tName.Size = new System.Drawing.Size(281, 21);
+            this.tName.TabIndex = 3;
+            this.tName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tName_KeyPress);
             // 
-            // cAdmin
+            // luser
             // 
-            this.cAdmin.AutoSize = true;
-            this.cAdmin.Location = new System.Drawing.Point(103, 111);
-            this.cAdmin.Name = "cAdmin";
-            this.cAdmin.Size = new System.Drawing.Size(102, 19);
-            this.cAdmin.TabIndex = 7;
-            this.cAdmin.Text = "Administrador";
-            this.cAdmin.UseVisualStyleBackColor = true;
-            this.cAdmin.CheckedChanged += new System.EventHandler(this.cAdmin_CheckedChanged);
-            this.cAdmin.Click += new System.EventHandler(this.cAdmin_Click);
+            this.luser.AutoSize = true;
+            this.luser.Location = new System.Drawing.Point(6, 59);
+            this.luser.Name = "luser";
+            this.luser.Size = new System.Drawing.Size(55, 15);
+            this.luser.TabIndex = 2;
+            this.luser.Text = "Nombre:";
             // 
-            // bSave
+            // tLogin
             // 
-            this.bSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bSave.Location = new System.Drawing.Point(390, 56);
-            this.bSave.Name = "bSave";
-            this.bSave.Size = new System.Drawing.Size(68, 31);
-            this.bSave.TabIndex = 9;
-            this.bSave.Text = "Guardar";
-            this.bSave.UseVisualStyleBackColor = true;
-            this.bSave.Click += new System.EventHandler(this.bSave_Click);
+            this.tLogin.Location = new System.Drawing.Point(103, 28);
+            this.tLogin.MaxLength = 20;
+            this.tLogin.Name = "tLogin";
+            this.tLogin.Size = new System.Drawing.Size(281, 21);
+            this.tLogin.TabIndex = 1;
+            this.tLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tLogin_KeyPress);
             // 
-            // bNew
+            // label1
             // 
-            this.bNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bNew.Location = new System.Drawing.Point(390, 23);
-            this.bNew.Name = "bNew";
-            this.bNew.Size = new System.Drawing.Size(68, 31);
-            this.bNew.TabIndex = 10;
-            this.bNew.Text = "Nuevo ";
-            this.bNew.UseVisualStyleBackColor = true;
-            this.bNew.Click += new System.EventHandler(this.bNew_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Login:";
             // 
-            // bDelete
+            // dgv
             // 
-            this.bDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bDelete.Location = new System.Drawing.Point(390, 88);
-            this.bDelete.Name = "bDelete";
-            this.bDelete.Size = new System.Drawing.Size(68, 31);
-            this.bDelete.TabIndex = 11;
-            this.bDelete.Text = "Eliminar";
-            this.bDelete.UseVisualStyleBackColor = true;
-            this.bDelete.Click += new System.EventHandler(this.bDelete_Click);
+            this.dgv.AllowUserToAddRows = false;
+            this.dgv.AllowUserToDeleteRows = false;
+            this.dgv.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(93, 187);
+            this.dgv.Name = "dgv";
+            this.dgv.ReadOnly = true;
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv.Size = new System.Drawing.Size(478, 192);
+            this.dgv.TabIndex = 2;
+            this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
             // 
             // user
             // 

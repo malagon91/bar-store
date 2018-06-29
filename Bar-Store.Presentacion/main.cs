@@ -66,5 +66,11 @@ namespace Bar_Store.Presentacion
             
         }
 
+        private void bProducts_Click(object sender, EventArgs e)
+        {
+            QuitaForma();
+            fProduct form = new fProduct();
+            InsertaEnDock(form);
+        }
     }
 }
