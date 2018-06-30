@@ -44,11 +44,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fInventory.Designer.cs">
+      <DependentUpon>fInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="fProduct.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fProduct.Designer.cs">
       <DependentUpon>fProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fRep.Designer.cs">
+      <DependentUpon>fRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSales.Designer.cs">
+      <DependentUpon>fSales.cs</DependentUpon>
     </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -70,8 +88,17 @@
     <Compile Include="user.Designer.cs">
       <DependentUpon>user.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="fInventory.resx">
+      <DependentUpon>fInventory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fProduct.resx">
       <DependentUpon>fProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fRep.resx">
+      <DependentUpon>fRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fSales.resx">
+      <DependentUpon>fSales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
@@ -141,6 +168,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\script.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LAST-U.BMP" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

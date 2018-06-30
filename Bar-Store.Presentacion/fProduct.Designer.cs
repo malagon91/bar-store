@@ -30,6 +30,7 @@
         {
             this.dgv = new System.Windows.Forms.DataGridView();
             this.GB1 = new System.Windows.Forms.GroupBox();
+            this.tDesc = new System.Windows.Forms.TextBox();
             this.bDelete = new System.Windows.Forms.Button();
             this.bNew = new System.Windows.Forms.Button();
             this.bSave = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.tID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lTitle = new System.Windows.Forms.Label();
-            this.tDesc = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.GB1.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +81,15 @@
             this.GB1.TabIndex = 4;
             this.GB1.TabStop = false;
             this.GB1.Text = "Informacion de productos";
+            // 
+            // tDesc
+            // 
+            this.tDesc.Location = new System.Drawing.Point(103, 111);
+            this.tDesc.MaxLength = 30;
+            this.tDesc.Name = "tDesc";
+            this.tDesc.Size = new System.Drawing.Size(281, 21);
+            this.tDesc.TabIndex = 4;
+            this.tDesc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tDesc_KeyPress);
             // 
             // bDelete
             // 
@@ -190,20 +199,11 @@
             this.lTitle.TabIndex = 3;
             this.lTitle.Text = "C A T A L A G O   D E   P R O D U C T O S";
             // 
-            // tDesc
-            // 
-            this.tDesc.Location = new System.Drawing.Point(103, 111);
-            this.tDesc.MaxLength = 30;
-            this.tDesc.Name = "tDesc";
-            this.tDesc.Size = new System.Drawing.Size(281, 21);
-            this.tDesc.TabIndex = 4;
-            this.tDesc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tDesc_KeyPress);
-            // 
             // fProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 391);
+            this.ClientSize = new System.Drawing.Size(700, 430);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.GB1);
             this.Controls.Add(this.lTitle);

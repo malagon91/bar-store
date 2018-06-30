@@ -29,6 +29,7 @@ namespace Bar_Store.Presentacion
 
         private void main_Load(object sender, EventArgs e)
         {
+            
            // if (user.Login == null)
               //  Application.Exit();
         }
@@ -71,6 +72,32 @@ namespace Bar_Store.Presentacion
             QuitaForma();
             fProduct form = new fProduct();
             InsertaEnDock(form);
+        }
+
+        private void bInventory_Click(object sender, EventArgs e)
+        {
+            QuitaForma();
+            fInventory form = new fInventory();
+            form.userInfo = userInfo;
+            InsertaEnDock(form);
+            //string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+            //string onScreenKeyboardPath = System.IO.Path.Combine(progFiles, "TabTip.exe");
+            // System.Diagnostics.Process.Start(onScreenKeyboardPath);
+        }
+
+        private void bSales_Click(object sender, EventArgs e)
+        {
+            QuitaForma();
+            fSales form = new fSales();
+            form.userInfo = userInfo;
+            InsertaEnDock(form);
+        }
+
+        private void bQuerty_Click(object sender, EventArgs e)
+        {
+            string progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+            string onScreenKeyboardPath = System.IO.Path.Combine(progFiles, "TabTip.exe");
+            System.Diagnostics.Process.Start(onScreenKeyboardPath);
         }
     }
 }

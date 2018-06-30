@@ -38,10 +38,11 @@ namespace Bar_Store.Presentacion
                     User user = controller.login(tUser.Text, tPass.Text);
                     if (user.Login != null)
                     {
-                      
+                        this.Hide();
                         main menu = new main();
                         menu.initForm(user);
                         menu.Show();
+                     
                       
                     }
                     else

@@ -9,6 +9,7 @@ namespace Bar_Store.Negocios
    public class Negocio
     {
         MainStore store = new MainStore();
+        #region login
         public User login (string user, string pass)
         {
             return store.UserLogin(user, pass);
@@ -18,6 +19,21 @@ namespace Bar_Store.Negocios
         {
             return store.getUser(login);
         }
+
+        #endregion
+
+        #region purchases
+        public List<PurchaseDTO> getPurchases()
+        {
+            return store.getPurchases();
+        }
+
+        public void savePurchase(Purchase pur)
+        {
+            string q = $"insert into Purchases values ({pur.IdProd},{pur.Total},'{pur.UserLogin}',getdate())";
+            store.runQuery(q);
+        }
+        #endregion
 
         #region users crud 
         public List<User> getUsers()
@@ -58,6 +74,21 @@ namespace Bar_Store.Negocios
         {
             string q = $"delete from Products where idProduct = '{id}'";
             store.runQuery(q);
+        }
+        #endregion
+
+        #region sales
+        public List<Sale> getSales(int status)
+        {
+            return store.GetSalesByStatus(status);
+        }
+        public List<Product> getProductFilter(string filter ="")
+        {
+            return store.filterProducts(filter);
+        }
+        public List<Sale> getSAlesDetails(int idSales)
+        {
+            return store.getSalesDatilsById(idSales);
         }
         #endregion
     }
