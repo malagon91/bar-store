@@ -190,5 +190,14 @@
   <ItemGroup>
     <None Include="Resources\LAST-U.BMP" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_copies.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

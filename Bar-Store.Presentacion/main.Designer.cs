@@ -33,6 +33,7 @@
             this.cmdSalir = new System.Windows.Forms.Button();
             this.txtOpcion = new System.Windows.Forms.TextBox();
             this.panel = new System.Windows.Forms.Panel();
+            this.bRep = new System.Windows.Forms.Button();
             this.bQuerty = new System.Windows.Forms.Button();
             this.bUsers = new System.Windows.Forms.Button();
             this.bInventory = new System.Windows.Forms.Button();
@@ -45,6 +46,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.SkyBlue;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.bRep);
             this.panel1.Controls.Add(this.bQuerty);
             this.panel1.Controls.Add(this.bUsers);
             this.panel1.Controls.Add(this.bInventory);
@@ -90,6 +92,19 @@
             this.panel.Size = new System.Drawing.Size(700, 430);
             this.panel.TabIndex = 5;
             // 
+            // bRep
+            // 
+            this.bRep.Image = global::Bar_Store.Presentacion.Properties.Resources.document_copies;
+            this.bRep.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bRep.Location = new System.Drawing.Point(19, 213);
+            this.bRep.Name = "bRep";
+            this.bRep.Size = new System.Drawing.Size(64, 57);
+            this.bRep.TabIndex = 8;
+            this.bRep.Text = "Reportes";
+            this.bRep.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bRep.UseVisualStyleBackColor = true;
+            this.bRep.Click += new System.EventHandler(this.bRep_Click);
+            // 
             // bQuerty
             // 
             this.bQuerty.Image = global::Bar_Store.Presentacion.Properties.Resources.atm;
@@ -107,7 +122,7 @@
             // 
             this.bUsers.Image = global::Bar_Store.Presentacion.Properties.Resources.report_user;
             this.bUsers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.bUsers.Location = new System.Drawing.Point(19, 282);
+            this.bUsers.Location = new System.Drawing.Point(19, 346);
             this.bUsers.Name = "bUsers";
             this.bUsers.Size = new System.Drawing.Size(64, 57);
             this.bUsers.TabIndex = 6;
@@ -121,7 +136,7 @@
             this.bInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bInventory.Image = global::Bar_Store.Presentacion.Properties.Resources.book;
             this.bInventory.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.bInventory.Location = new System.Drawing.Point(19, 215);
+            this.bInventory.Location = new System.Drawing.Point(19, 279);
             this.bInventory.Name = "bInventory";
             this.bInventory.Size = new System.Drawing.Size(64, 56);
             this.bInventory.TabIndex = 5;
@@ -191,5 +206,6 @@
         private System.Windows.Forms.Button bInventory;
         private System.Windows.Forms.Button bUsers;
         private System.Windows.Forms.Button bQuerty;
+        private System.Windows.Forms.Button bRep;
     }
 }

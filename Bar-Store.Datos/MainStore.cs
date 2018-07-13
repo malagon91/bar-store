@@ -144,7 +144,7 @@ namespace Bar_Store.Datos
         #endregion
 
         #region sales
-        public List<Product> filterProducts(string filter ="")
+        public List<ProductDto> filterProducts(string filter ="")
         {
             SqlConnection oCon = new SqlConnection(ConectionString);
             SqlCommand oCmd = 
@@ -153,10 +153,10 @@ namespace Bar_Store.Datos
 
             oCon.Open();
             SqlDataReader dr = oCmd.ExecuteReader();
-            List<Product> products = new List<Product>();
+            List<ProductDto> products = new List<ProductDto>();
             while (dr.Read())
             {
-                Product prod = new Product();
+                ProductDto prod = new ProductDto();
                 prod.Id = Convert.ToInt32(dr["idProduct"].ToString());
                 prod.Name = dr["product"].ToString();
                 products.Add(prod);
@@ -166,7 +166,7 @@ namespace Bar_Store.Datos
             return products;
         }
 
-        public List<Sale> GetSalesByStatus(int status)
+        public List<SaleDto> GetSalesByStatus(int status)
         {
             SqlConnection oCon = new SqlConnection(ConectionString);
             SqlCommand oCmd =
@@ -175,10 +175,10 @@ namespace Bar_Store.Datos
 
             oCon.Open();
             SqlDataReader dr = oCmd.ExecuteReader();
-            List<Sale> sales = new List<Sale>();
+            List<SaleDto> sales = new List<SaleDto>();
             while (dr.Read())
             {
-                Sale sal = new Sale();
+                SaleDto sal = new SaleDto();
                 sal.Id = Convert.ToInt32(dr["idSale"].ToString());
                 sal.Notes = dr["Notes"].ToString();
                 sales.Add(sal);
@@ -188,9 +188,9 @@ namespace Bar_Store.Datos
             return sales;
         }
 
-        public List<Sale> getSalesDatilsById(int idSale)
+        public List<SalesDetailsDto> getSalesDatilsById(int idSale)
         {
-            string q = $"select p.product, d.total from SalesDetails d inner join Products p on (d.idProduct = p.idProduct) where d.idSale = {idSale} order by p.product";
+            string q = $"select d.idProduct, p.product, d.total from SalesDetails d inner join Products p on (d.idProduct = p.idProduct) where d.idSale = {idSale} order by p.product";
             SqlConnection oCon = new SqlConnection(ConectionString);
             SqlCommand oCmd =
                 new SqlCommand(q, oCon);
@@ -198,17 +198,114 @@ namespace Bar_Store.Datos
 
             oCon.Open();
             SqlDataReader dr = oCmd.ExecuteReader();
-            List<Sale> sales = new List<Sale>();
+            List<SalesDetailsDto> sales = new List<SalesDetailsDto>();
             while (dr.Read())
             {
-                Sale sal = new Sale();
-                sal.Id = Convert.ToInt32(dr["idSale"].ToString());
-                sal.Notes = dr["Notes"].ToString();
+                SalesDetailsDto sal = new SalesDetailsDto();
+                sal.IdProdct = Convert.ToInt32(dr["idProduct"].ToString());
+                sal.Product = dr["product"].ToString();
+                sal.Total = Convert.ToInt32(dr["total"].ToString());
                 sales.Add(sal);
             }
             oCon.Close();
             oCon.Dispose();
             return sales;
+        }
+
+        public double getCostById(int idProduct)
+        {
+            string q = $"select cost from Products where idProduct = {idProduct}";
+            SqlConnection oCon = new SqlConnection(ConectionString);
+            SqlCommand oCmd =
+                new SqlCommand(q, oCon);
+            oCmd.CommandType = CommandType.Text;
+
+            oCon.Open();
+            SqlDataReader dr = oCmd.ExecuteReader();
+            TotalsDto totals = new TotalsDto();
+            dr.Read();
+            double cost = 0;
+            if (dr.HasRows)
+                cost = Convert.ToDouble(dr["cost"].ToString());
+            oCon.Close();
+            oCon.Dispose();
+            return cost;
+        }
+        public int getProductInCar(int idSale,int idProd)
+        {
+            string q = $" select count(*) as 'count' from SalesDetails where idSale = {idSale} and idProduct = {idProd}";
+            SqlConnection oCon = new SqlConnection(ConectionString);
+            SqlCommand oCmd =
+                new SqlCommand(q, oCon);
+            oCmd.CommandType = CommandType.Text;
+
+            oCon.Open();
+            SqlDataReader dr = oCmd.ExecuteReader();
+            int result = 0;
+            dr.Read();
+
+            if (dr.HasRows)
+               result = Convert.ToInt32(dr["count"].ToString());
+            oCon.Close();
+            oCon.Dispose();
+            return result;
+        }
+        #endregion
+
+        #region reports
+        public List<Report> getDailyReport(Date da , int status)
+        {        //select idSale, Notes,totalProducts , total, u.userName
+            string q = "select idSale, Notes,isnull(totalProducts,0) as 'totalProducts' , isnull(total,0) as 'total', u.userName from Sales s inner join users u on (s.userLogin = u.userLogin) " +
+                $"where s.saleStatus = {status} and year(dateSale)= {da.Y} and MONTH(dateSale) = {da.M} and DAY(dateSale) = {da.D}";
+            SqlConnection oCon = new SqlConnection(ConectionString);
+            SqlCommand oCmd = new SqlCommand(q, oCon);
+            oCmd.CommandType = CommandType.Text;
+
+            oCon.Open();
+            SqlDataReader dr = oCmd.ExecuteReader();
+            List<Report> reportes = new List<Report>();
+            while (dr.Read())
+            {
+                Report rep = new Report();
+                rep.Id = Convert.ToInt32(dr["idSale"].ToString());
+                rep.Notes = dr["Notes"].ToString();
+                rep.Items = Convert.ToInt32(dr["totalProducts"].ToString());
+                rep.Total = Convert.ToDouble(dr["total"].ToString());
+                rep.User = dr["userName"].ToString();
+                reportes.Add(rep);
+            }
+            oCon.Close();
+            oCon.Dispose();
+            return reportes;
+        }
+
+        public List<Report> getProductsReport(string desde,string hasta, int idProduct)
+        { 
+            string q = "select p.product, d.total, 'Venta' as 'Tipo' from SalesDetails d inner join Sales s on (d.idSale = d.idSale) inner join Products p on(d.idSale = p.idProduct) " +
+                            $"where s.dateSale between '{desde}' and '{hasta}' and p.idProduct = {idProduct} " +
+                            " union all " +
+                            "select t.product, p.total, 'Compra' as 'Tipo' from Purchases p inner join Products t on (p.idProduct = t.idProduct) " +
+                            $"where p.dop between '{desde}' and '{hasta}' and p.idProduct = {idProduct}";
+            SqlConnection oCon = new SqlConnection(ConectionString);
+            SqlCommand oCmd = new SqlCommand(q, oCon);
+            oCmd.CommandType = CommandType.Text;
+
+            oCon.Open();
+            SqlDataReader dr = oCmd.ExecuteReader();
+            List<Report> reportes = new List<Report>();
+            while (dr.Read())
+            {
+                Report rep = new Report();
+                rep.Id = Convert.ToInt32(dr["idSale"].ToString());
+                rep.Notes = dr["Notes"].ToString();
+                rep.Items = Convert.ToInt32(dr["totalProducts"].ToString());
+                rep.Total = Convert.ToDouble(dr["total"].ToString());
+                rep.User = dr["userName"].ToString();
+                reportes.Add(rep);
+            }
+            oCon.Close();
+            oCon.Dispose();
+            return reportes;
         }
         #endregion
     }

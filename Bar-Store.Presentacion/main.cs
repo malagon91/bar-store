@@ -99,5 +99,13 @@ namespace Bar_Store.Presentacion
             string onScreenKeyboardPath = System.IO.Path.Combine(progFiles, "TabTip.exe");
             System.Diagnostics.Process.Start(onScreenKeyboardPath);
         }
+
+        private void bRep_Click(object sender, EventArgs e)
+        {
+            QuitaForma();
+            fRep form = new fRep();
+            form.userInfo = userInfo;
+            InsertaEnDock(form);
+        }
     }
 }
